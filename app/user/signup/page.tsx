@@ -1,5 +1,5 @@
 'use client'
-import { getProviders, signIn, useSession } from 'next-auth/react';
+import { getProviders, useSession } from 'next-auth/react';
 import Link from 'next/link'
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
@@ -56,7 +56,7 @@ const Signup = () => {
             // Perform any additional validation or data processing here  
             toast.promise((async () => {
                 try {
-                    const response = await fetch('/api/auth/register', {
+                    const response = await fetch('/api/register-route', {
                         method: 'POST',
                         body: JSON.stringify(values),
                     });
