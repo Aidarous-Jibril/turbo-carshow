@@ -104,12 +104,12 @@ const Navbar = () => {
              </>
            ) : (
              <>
-             <Link href={'/user/login'}>
-             <CustomBtn 
-               title='Sign In'
-               btnType= "Sign In | Log In"
-               optionStyles='text-black bg-white-700 hover:bg-gray-200 text-blue-600 dark:text-blue-50 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
-               />
+             <Link href={'/user/login'} onClick={() => setOpen(!open)}>
+              <CustomBtn 
+                title='Sign In'
+                btnType= "Sign In | Log In"
+                optionStyles='text-black bg-white-700 hover:bg-gray-200 text-blue-600 dark:text-blue-50 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
+                />
              </Link>
              </>
            )}
