@@ -10,7 +10,5 @@ const UserSchema = new Schema<IUser>({
     image: String
 });
 
-// const User = model<IUser>("user", UserSchema);
-// export default User;
 const User = models.User || model('User', UserSchema);
 export default User;

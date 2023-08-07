@@ -1,5 +1,3 @@
-import axios from 'axios'
-
 import { CarProps, FilterDataProps } from '@/types';
 
 
@@ -44,10 +42,10 @@ import { CarProps, FilterDataProps } from '@/types';
       url.searchParams.append('make' ,make);
       url.searchParams.append('modelFamily', model.split(' ')[0]);
       url.searchParams.append('modelYear', `${year}`);
-      // url.searchParams.append('zoomLevel', `${zoomLevel}`);
       url.searchParams.append('angle', `${angle}`);
 
-      return `${url}`;
+      // return `${url}`;
+      return url.toString();
     }
 
 //tobe re-used func

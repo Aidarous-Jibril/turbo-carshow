@@ -82,7 +82,7 @@ const CarDetails = ({ showModal, closeModal, car }: CarDetailsProps) => {
                 
                 {/*body*/}
                 <div className="relative p-6 flex-auto">
-                <h3 className="text-3xl font-semibold">{car.make}{ } {car.model}</h3>
+                <h3 className="text-3xl font-semibold">{car.manufacturer}{ } {car.model}</h3>
 
                 <div className='mt-3 flex flex-wrap  gap-1'>
                     {Object.entries(car).map(([key, value]) => (

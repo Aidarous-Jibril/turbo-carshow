@@ -54,7 +54,7 @@ const SearchBar = () => {
       // append all search params to the current path name
       const newPathName = `${window.location.pathname}?${searchParams.toString()}`
 
-      router.push(newPathName)
+      router.push(newPathName, {scroll: false} );
     }
   return (
     <form 

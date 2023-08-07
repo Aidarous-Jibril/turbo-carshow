@@ -8,6 +8,7 @@ import { HiAtSymbol, HiFingerPrint, HiOutlineUser  } from "react-icons/hi";
 import {  useFormik } from 'formik';
 import { RegisterFormValues } from '@/types';
 import { registerValidate } from '@/utils/validate';
+import { toast } from 'react-hot-toast';
 
 
 const Signup = () => {
@@ -30,12 +31,12 @@ const Signup = () => {
         setupProviders();
     }, []);
 
-    // console.log(providers)
-    // useEffect(()=>{
-    //     if(session?.user?.id){
-    //         router.push('/');
-    //     } 
-    // },[session?.user?.id]);
+    console.log(providers)
+    useEffect(()=>{
+        if(session?.user?.id){
+            router.push('/');
+        } 
+    },[session?.user?.id]);
 
     //Formik
     const formik = useFormik({
@@ -51,8 +52,31 @@ const Signup = () => {
     console.log(formik.errors)
 
     async function onSubmit(values: RegisterFormValues) {
-          console.log(values)
-      }
+          // console.log(values)
+            // Perform any additional validation or data processing here  
+            toast.promise((async () => {
+                try {
+                    const response = await fetch('/api/auth/register', {
+                        method: 'POST',
+                        body: JSON.stringify(values),
+                    });
+                    if (response.ok) {
+                      console.log("RESPONSE", response)
+                        toast.success('User registered successfully & You can log in with your credentials.');
+                        router.push('http://localhost:3000/user/login')
+                    }
+                } catch (error) {
+                    console.error(error);
+                    toast.error('User registration failed.');                
+                  }
+            })(), {
+                loading: 'Registering user...',
+                success: 'User registered successfully.',
+                error: (err) => err.message,
+            });
+        };
+
+
     return (
 
     <form onSubmit={formik.handleSubmit} className="p-4 max-w-md mx-auto bg-white border-t-8 border-indigo-700 mt-10 rounded">
