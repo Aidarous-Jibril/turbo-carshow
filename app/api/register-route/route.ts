@@ -6,10 +6,11 @@ import bcrypt from "bcrypt";
 
 
 export const handler = async (req: Request,) => {
-
-  if(req.method === 'POST') {
-    if(!req.body) return NextResponse.json({msg: "No form data"}, {status: 404})
-  }
+  // export async function POST(req: Request){ 
+  
+  // if(req.method === 'POST') {
+  //   if(!req.body) return NextResponse.json({msg: "No form data"}, {status: 404})
+  // }
 
   const body: RequestBodyProps = await req.json();
     console.log(body)
