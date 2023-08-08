@@ -63,7 +63,7 @@ const Signup = () => {
                     if (response.ok) {
                       console.log("RESPONSE", response)
                         toast.success('User registered successfully & You can log in with your credentials.');
-                        router.push('http://localhost:3000/user/login')
+                        router.push('/user/login')
                     }
                 } catch (error) {
                     console.error(error);
