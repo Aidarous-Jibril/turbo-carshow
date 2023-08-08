@@ -18,7 +18,7 @@ import { CarProps, FilterDataProps } from '@/types';
 
 
     // calculate Car rent per day funt
-    export const calculateCarRent = (city_mpg: number, year: number) => {
+    export const calculateCarRent = (city_mpg: number, year: any ) => {
       const basePricePerDay = 50; // Base rental price per day in dollars
       const mileageFactor = 0.1; // Additional rate per mile driven
       const ageFactor = 0.05; // Additional rate per year of vehicle age

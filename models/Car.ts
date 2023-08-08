@@ -54,7 +54,7 @@ const CarSchema =  new Schema({
         required: [true,'HighwayMPG is required']
     },
     year:  {
-        type: Number,
+        type: String,
         required: [true,'year is required']
     },
     transmission:  {

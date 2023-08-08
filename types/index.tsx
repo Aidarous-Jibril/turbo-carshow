@@ -107,7 +107,7 @@ export interface IUser {
     cityMPG: number;
     combinationMPG: number;
     highwayMPG: number;
-    year: number;
+    year: string;
     transmission: string;
     fuelType: string;
     carType: string;

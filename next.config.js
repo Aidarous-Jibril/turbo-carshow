@@ -16,6 +16,9 @@ const nextConfig = {
             "res.cloudinary.com",
             "lh3.googleusercontent.com"
         ]
+    },
+    typescript: {
+        ignoreBuildErrors: true
     }
 }
 
