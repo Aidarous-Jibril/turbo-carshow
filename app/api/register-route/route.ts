@@ -5,8 +5,8 @@ import bcrypt from "bcrypt";
 // import { hash } from "bcrypt"
 
 
-export const handler = async (req: Request,) => {
-  // export async function POST(req: Request){ 
+// export const handler = async (req: Request,) => {
+  export async function POST(req: Request){ 
   
   // if(req.method === 'POST') {
   //   if(!req.body) return NextResponse.json({msg: "No form data"}, {status: 404})
@@ -32,4 +32,4 @@ export const handler = async (req: Request,) => {
 
 }
 
-export { handler as GET, handler as POST };
+// export { handler as GET, handler as POST };
